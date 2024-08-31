@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>net.weesli</groupId>
-    <artifactId>sellermodule</artifactId>
+    <artifactId>Seller</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
-    <name>sellermodule</name>
+    <name>Seller</name>
 
     <properties>
         <java.version>17</java.version>
@@ -17,26 +17,26 @@
     </properties>
 
     <build>
-        <defaultGoal>clean package</defaultGoal>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.13.0</version>
+                <version>3.8.1</version>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+                    <source>17</source>
+                    <target>17</target>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.5.3</version>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.2.0</version>
                 <executions>
                     <execution>
-                        <phase>package</phase>
+                        <id>default-resources</id>
+                        <phase>process-resources</phase>
                         <goals>
-                            <goal>shade</goal>
+                            <goal>resources</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -44,8 +44,10 @@
         </plugins>
         <resources>
             <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
+                <directory>src/main/java/resources</directory>
+                <includes>
+                    <include>**/*.yml</include>
+                </includes>
             </resource>
         </resources>
     </build>
@@ -59,13 +61,29 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
     </repositories>
 
     <dependencies>
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.20.4-R0.1-SNAPSHOT</version>
+            <version>1.21.1-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.Weesli</groupId>
+            <artifactId>RLib</artifactId>
+            <version>1.7</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.Weesli</groupId>
+            <artifactId>rclaim</artifactId>
+            <version>1.5.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

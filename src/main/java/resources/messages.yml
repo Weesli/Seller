@@ -1,0 +1,33 @@
+#
+#        This configuration is for seller module
+#
+
+ALREADY_SELLING_CLAIM: "&cHey! You are already selling this claim!"
+SELL_CLAIM: "&aClaim is on sale for %price%!"
+SELL_CLAIM_SUCCESSFULLY: "&aClaim has been purchased for %price%!"
+USAGE: "&aUsage: /claim sell <price>"
+THIS_AREA_NOT_SELLING: "&cThis area is not for sale!"
+SALE_STOPPED: "&aSale stopped!"
+NO_OWNER: "&cHey! You are not owner of this claim!"
+NOT_ENOUGH_MONEY: "&cYou don't have enough money!"
+
+menus:
+  title: "&8Are you sure ?"
+  size: 27
+  items:
+    accept:
+      title: "&aAccept"
+      material: GREEN_WOOL
+      custom-model-data: 0
+      lore:
+        - ""
+        - "&7Accept the buy of this claim."
+      slot: 11
+    deny:
+      title: "&cDeny"
+      material: RED_WOOL
+      custom-model-data: 0
+      lore:
+        - ""
+        - "&cDeny the buy of this claim."
+      slot: 15
